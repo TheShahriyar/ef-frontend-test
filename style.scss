@@ -126,6 +126,15 @@ img {
 }
 
 .nav-bottom {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(45, 56, 64, 0) 0%, #34444d 100%);
+  padding-left: 50px;
+  border-radius: 35px;
+  margin-top: 15px;
+
   ul {
     display: flex;
     justify-content: center;
@@ -138,7 +147,94 @@ img {
       }
 
       a {
-        color: #eeefef;
+        color: #fff;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+
+        i {
+          margin-right: 8px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .search-wrapper {
+    color: #fff;
+    margin-left: 30px;
+
+    .search-btn {
+      width: 65px;
+      height: 65px;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--primary);
+      color: #fff;
+      outline: 0;
+      box-shadow: none;
+      font-size: 18px;
+    }
+
+    input {
+      position: absolute;
+      left: 0;
+      top: 0px;
+      width: 0;
+      height: 100%;
+      background: var(--primary);
+      background: linear-gradient(
+        270deg,
+        rgba(246, 84, 5, 1) 0%,
+        rgba(247, 114, 9, 1) 100%
+      );
+      border-radius: 60px;
+      border: 0;
+      outline: 0;
+      padding: 25px;
+      color: #fff;
+      font-size: 16px;
+      transition: width 0.5s;
+      display: none;
+
+      &:focus,
+      &:focus-visible {
+        outline: 0;
+      }
+      &::placeholder {
+        color: #fff;
+      }
+    }
+
+    .close-icon {
+      position: absolute;
+      right: -40px;
+      top: 33%;
+      color: #fff;
+      font-size: 24px;
+      display: none;
+    }
+    .advance-search {
+      position: absolute;
+      top: 35%;
+      right: 25px;
+      color: #fff;
+      font-size: 13px;
+      display: none;
+    }
+  }
+
+  &.search-open {
+    .search-wrapper {
+      input {
+        width: 100%;
+        display: block;
+      }
+      .close-icon,
+      .advance-search {
+        display: inline-block;
       }
     }
   }
