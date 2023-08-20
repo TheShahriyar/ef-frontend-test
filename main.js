@@ -20,6 +20,7 @@ let elements = document.getElementsByClassName("nav-item");
 Array.from(elements).forEach((element) => {
   element.addEventListener("click", (e) => {
     element.parentElement.classList.toggle("mega-open");
+    document.body.classList.toggle("mega-open");
   });
 });
 
