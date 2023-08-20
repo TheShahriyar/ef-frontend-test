@@ -60,6 +60,7 @@ img {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 25px;
 }
 .container-fluid {
   padding: 0 25px;
@@ -89,7 +90,7 @@ img {
 // Start Header Section
 .header-section {
   position: absolute;
-  top: 30px;
+  top: 15px;
   left: 0;
   right: 0;
   width: 100%;
@@ -135,7 +136,7 @@ img {
   border-radius: 35px;
   margin-top: 15px;
 
-  ul {
+  > ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,6 +156,79 @@ img {
         i {
           margin-right: 8px;
           font-size: 20px;
+        }
+
+        i.fa-chevron-down {
+          color: #aaacae;
+          font-size: 10px;
+          margin-left: 5px;
+        }
+      }
+
+      .megamenu {
+        width: 600px;
+        height: auto;
+        padding: 20px;
+        background: linear-gradient(120deg, #34444d 0%, rgba(#34444d, 0.4) 90%);
+        backdrop-filter: blur(40px);
+        position: absolute;
+        top: 150%;
+        left: 0;
+        border-radius: 10px;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.4s;
+
+        .heading {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: rgba($color: #4b5759, $alpha: 0.8);
+          color: #fff;
+          border-radius: 7px;
+          padding: 10px 20px;
+          font-size: 14px;
+          margin-bottom: 30px;
+        }
+
+        ul.mega-items-wrapper {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-column-gap: 30px;
+          margin-bottom: 20px;
+
+          li {
+            margin-bottom: 20px;
+
+            a {
+              i {
+                font-size: 32px;
+              }
+            }
+          }
+        }
+        ul.cards {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+
+          li {
+            a {
+              display: flex;
+              flex-direction: column;
+              i {
+                font-size: 40px;
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+
+      &.mega-open {
+        .megamenu {
+          top: 130%;
+          visibility: visible;
+          opacity: 1;
         }
       }
     }
@@ -196,8 +270,8 @@ img {
       padding: 25px;
       color: #fff;
       font-size: 16px;
-      transition: width 0.5s;
-      display: none;
+      transition: width 0.2s;
+      visibility: hidden;
 
       &:focus,
       &:focus-visible {
@@ -230,7 +304,7 @@ img {
     .search-wrapper {
       input {
         width: 100%;
-        display: block;
+        visibility: visible;
       }
       .close-icon,
       .advance-search {

@@ -13,3 +13,12 @@ document
   .addEventListener("click", () => {
     document.querySelector(".nav-bottom").classList.remove("search-open");
   });
+
+// Megamenu Open & Close
+let elements = document.getElementsByClassName("nav-item");
+
+Array.from(elements).forEach((element) => {
+  element.addEventListener("click", (e) => {
+    element.parentElement.classList.toggle("mega-open");
+  });
+});
