@@ -22,3 +22,16 @@ Array.from(elements).forEach((element) => {
     element.parentElement.classList.toggle("mega-open");
   });
 });
+
+// Mobile Nav Open
+let mobileIcon = document.getElementById("mobile-menu-icon");
+
+mobileIcon.addEventListener("click", () => {
+  document.getElementById("nav").classList.toggle("nav-open");
+});
+
+// Mobile Nav CLose
+let closeNav = document.getElementById("nav-close-icon");
+closeNav.addEventListener("click", () => {
+  document.getElementById("nav").classList.remove("nav-open");
+});
